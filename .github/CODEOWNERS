@@ -1,0 +1,10 @@
+# Ownership mapping for the dependency modules.
+
+/javascript/   @irishredbeard-org/mock-frontend-web
+/typescript/   @irishredbeard-org/mock-frontend-web
+/python/       @irishredbeard-org/mock-backend-python
+/java/         @irishredbeard-org/mock-services-java
+/go/           @irishredbeard-org/mock-infrastructure-go
+/csharp/       @irishredbeard-org/mock-enterprise-dotnet
+/.github/      @irishredbeard-org/mock-security-team
+*              @irishredbeard-org/mock-security-team

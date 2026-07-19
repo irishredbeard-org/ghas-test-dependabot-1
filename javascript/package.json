@@ -1,0 +1,13 @@
+{
+  "name": "dependabot-demo-js",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": { "test": "jest" },
+  "dependencies": {
+    "axios": "0.21.0",
+    "jsonwebtoken": "8.5.1",
+    "lodash": "4.17.15",
+    "minimist": "0.0.8"
+  },
+  "devDependencies": { "jest": "29.7.0" }
+}

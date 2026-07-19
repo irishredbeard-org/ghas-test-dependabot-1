@@ -1,0 +1,19 @@
+{
+  "name": "dependabot-demo-ts",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": { "test": "jest" },
+  "dependencies": {
+    "node-fetch": "2.6.1",
+    "chalk": "4.1.2",
+    "json5": "2.2.0"
+  },
+  "devDependencies": {
+    "typescript": "5.4.5",
+    "jest": "29.7.0",
+    "ts-jest": "29.1.2",
+    "@types/jest": "29.5.12",
+    "@types/node": "20.11.30",
+    "@types/node-fetch": "2.6.11"
+  }
+}

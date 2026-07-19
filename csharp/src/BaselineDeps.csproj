@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Pinned OLD on purpose (Dependabot fixture). -->
+    <!-- CVE-2024-21319: 6.15.0 is vulnerable; 7.x is the documented major upgrade
+         that also changes default claim mapping and adds ValidateTokenAsync. -->
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.0" />
+    <!-- CVE-2024-21907: 12.0.3 is vulnerable; 13.0.1 is the patched drop-in. -->
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>
