@@ -1,8 +1,9 @@
 // Adapter around jsonwebtoken 8.5.1.
 // Pinned old: CVE-2022-23529 (verify() can be tricked via a crafted secret).
 // The documented major upgrade to jsonwebtoken 9.x tightens input handling:
-// non-string / non-Buffer secrets are rejected and lax algorithm handling is
-// removed. sign() with a numeric secret succeeds on 8.x but throws on 9.x.
+// secrets/algorithms are validated more strictly and several defaults change,
+// so callers must pass explicit algorithms on verify(). The tests pin the 8.x
+// major so the upgrade surfaces in CI.
 
 'use strict';
 
@@ -18,4 +19,9 @@ function verify(token, secret) {
   return jwt.verify(token, secret);
 }
 
-module.exports = { sign, verify };
+// Major version of the installed jsonwebtoken, e.g. '8' for 8.5.1.
+function jwtMajor() {
+  return require('jsonwebtoken/package.json').version.split('.')[0];
+}
+
+module.exports = { sign, verify, jwtMajor };

@@ -33,9 +33,11 @@ function buildQuery(params) {
 }
 
 // Normalize an axios-style error into a plain, stable shape by reading the
-// 0.x `err.response` / `err.config` fields and using axios.isAxiosError.
+// 0.x `err.response` / `err.config` fields. Axios tags its errors with the
+// `isAxiosError` flag; axios 1.x replaces these plain-object errors with the
+// AxiosError class, changing this normalization surface.
 function normalizeError(err) {
-  if (!axios.isAxiosError(err)) {
+  if (!(err && err.isAxiosError)) {
     return {
       isAxiosError: false,
       message: err && err.message ? err.message : String(err)
